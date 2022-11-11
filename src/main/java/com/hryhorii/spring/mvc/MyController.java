@@ -30,13 +30,10 @@ public class MyController {
         return "ask-emp-details-view";
     }
 
-
-    //@RequestMapping(path = "/showDetails", method = RequestMethod.GET)
     @GetMapping("/showDetails")
     public String showEmpDetails(@Valid @ModelAttribute("employee") Employee emp
             , BindingResult bindingResult) {
 
-//        System.out.println("surname length = "+ emp.getSurname().length());
 
         if (bindingResult.hasErrors()) {
             return "ask-emp-details-view";
